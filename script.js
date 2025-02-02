@@ -1,13 +1,14 @@
 
-$allowed_ip = '123.45.67.89'; // Reemplaza con la IP de la PC permitida
-
-if ($_SERVER['REMOTE_ADDR'] !== $allowed_ip) {
-    header('HTTP/1.0 403 Forbidden');
-    echo 'Acceso denegado';
-    exit;
+function bloquearMoviles() {
+  const esMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+  
+  if (esMovil) {
+      document.body.innerHTML = "<h2>Acceso restringido. Por favor, usa una computadora.</h2>";
+  }
 }
 
-// Tu código de la página aquí
+bloquearMoviles();
+
 
 
 
