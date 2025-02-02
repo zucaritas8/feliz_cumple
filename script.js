@@ -1,3 +1,16 @@
+
+$allowed_ip = '123.45.67.89'; // Reemplaza con la IP de la PC permitida
+
+if ($_SERVER['REMOTE_ADDR'] !== $allowed_ip) {
+    header('HTTP/1.0 403 Forbidden');
+    echo 'Acceso denegado';
+    exit;
+}
+
+// Tu código de la página aquí
+
+
+
 function yes() {
   // Ocultar todo el contenido actual
   var firstS = document.getElementById("first-sec");
